@@ -31,14 +31,6 @@
     color: #FFFF;
 }
 
-.btn-green{
-    color: #FFFF;
-    background-color: #00C471;
-}
-.btn-green:hover{
-    color: #FFFF;
-}
-
 .btn-cream{
     background-color: lightgoldenrodyellow;
 }
@@ -55,6 +47,39 @@
 .btn-red:hover{
     color: #FFFF;
 }
+
+/* btn toska */
+.btn-green{
+    color: #FFFF;
+    background-color: #1ABF9B;
+}
+.btn-green:hover{
+    color: #FFFF;
+}
+.btn-light-green{
+    color: #FFFF;
+    background-color: #A6EADA;
+    color: #1ABF9B;
+}
+.btn-light-green:hover{
+    color: #FFFF;
+}
+/* btn toska */
+
+/* Ukuran */
+.penuh{
+    width: 50%;
+}
+.setengah{
+    width: 50%;
+}
+.seperempat{
+    width: 25%;
+}
+.tigaperemat{
+    width: 75%;
+}
+/* Ukuran */
 
 /* END ALL BUTTON */
 

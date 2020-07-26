@@ -1,0 +1,21 @@
+#kt_aside{
+    background-color: #31D8B1 !important;
+    color: #A6EADA !important;
+}
+
+.aside .btn.btn-icon .svg-icon svg g [fill]{
+    fill: #1ABF9B;
+}
+
+.nav-item .btn.btn-icon .svg-icon svg g .active [fill]{
+    fill: #1ABF9B;
+}
+
+.btn-icon{
+    color: #A6EADA !important;
+    background-color: #A6EADA !important;
+}
+.svg-icon{
+    color: #A6EADA !important;
+    /* background-color: #A6EADA !important; */
+}

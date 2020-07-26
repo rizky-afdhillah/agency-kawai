@@ -161,7 +161,7 @@ var KTLogin = function() {
 					buttonsStyling: false,
 					confirmButtonText: "Ok, got it!",
 					customClass: {
-						confirmButton: "btn font-weight-bold btn-light-primary"
+						confirmButton: "btn font-weight-bold btn-light-green"
 					}
 				}).then(function() {
 					KTUtil.scrollTop();
@@ -380,7 +380,7 @@ var KTLogin = function() {
 						buttonsStyling: false,
 						confirmButtonText: "Ok, got it!",
 						customClass: {
-							confirmButton: "btn font-weight-bold btn-light-primary"
+							confirmButton: "btn font-weight-bold btn-red"
 						}
 					}).then(function () {
 						KTUtil.scrollTop();
