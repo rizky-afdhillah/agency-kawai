@@ -3,37 +3,36 @@
 // Class definition
 var KTLayoutBuilder = function() {
 
+	var formAction;
+
 	var exporter = {
 		init: function() {
-			$('#kt-btn-howto').click(function(e) {
-				e.preventDefault();
-				$('#kt-howto').slideToggle();
-			});
+			formAction = $('.form').attr('action');
 		},
 		startLoad: function(options) {
 			$('#builder_export').
-			addClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').
-			find('span').text('Exporting...').
-			closest('.kt-form__actions').
-			find('.btn').
-			attr('disabled', true);
+					addClass('spinner spinner-right spinner-primary').
+					find('span').text('Exporting...').
+					closest('.card-footer').
+					find('.btn').
+					attr('disabled', true);
 			toastr.info(options.title, options.message);
 		},
 		doneLoad: function() {
 			$('#builder_export').
-			removeClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').
-			find('span').text('Export').
-			closest('.kt-form__actions').
-			find('.btn').
-			attr('disabled', false);
+					removeClass('spinner spinner-right spinner-primary').
+					find('span').text('Export').
+					closest('.card-footer').
+					find('.btn').
+					attr('disabled', false);
 		},
 		exportHtml: function(demo) {
 			exporter.startLoad({
 				title: 'Generate HTML Partials',
-				message: 'Process started and it may take about 1 to 10 minutes.',
+				message: 'Process started and it may take a while.',
 			});
 
-			$.ajax('index.php', {
+			$.ajax(formAction, {
 				method: 'POST',
 				data: {
 					builder_export: 1,
@@ -49,7 +48,7 @@ var KTLayoutBuilder = function() {
 				}
 
 				var timer = setInterval(function() {
-					$.ajax('index.php', {
+					$.ajax(formAction, {
 						method: 'POST',
 						data: {
 							builder_export: 1,
@@ -62,62 +61,10 @@ var KTLayoutBuilder = function() {
 						if (result.export_status !== 1) return;
 
 						$('<iframe/>').attr({
-							src: 'index.php?builder_export&builder_download&id=' + result.id,
+							src: formAction + '?builder_export&builder_download&id=' + result.id,
 							style: 'visibility:hidden;display:none',
 						}).ready(function() {
 							toastr.success('Export HTML Version Layout', 'HTML version exported.');
-							exporter.doneLoad();
-							// stop the timer
-							clearInterval(timer);
-						}).appendTo('body');
-					});
-				}, 15000);
-
-				// generate download
-				// setTimeout(function() {
-				// 	exporter.runGenerate();
-				// }, 5000);
-			});
-		},
-		exportHtmlStatic: function(demo) {
-			exporter.startLoad({
-				title: 'Generate HTML Static Version',
-				message: 'Process started and it may take about 1 to 10 minutes.',
-			});
-
-			$.ajax('index.php', {
-				method: 'POST',
-				data: {
-					builder_export: 1,
-					export_type: 'html',
-					demo: demo,
-					theme: 'metronic',
-				},
-			}).done(function(r) {
-				var result = JSON.parse(r);
-				if (result.message) {
-					exporter.stopWithNotify(result.message);
-					return;
-				}
-
-				var timer = setInterval(function() {
-					$.ajax('index.php', {
-						method: 'POST',
-						data: {
-							builder_export: 1,
-							builder_check: result.id,
-						},
-					}).done(function(r) {
-						var result = JSON.parse(r);
-						if (typeof result === 'undefined') return;
-						// export status 1 is completed
-						if (result.export_status !== 1) return;
-
-						$('<iframe/>').attr({
-							src: 'index.php?builder_export&builder_download&id=' + result.id,
-							style: 'visibility:hidden;display:none',
-						}).ready(function() {
-							toastr.success('Export Default Version', 'Default HTML version exported with current configured layout.');
 							exporter.doneLoad();
 							// stop the timer
 							clearInterval(timer);
@@ -133,14 +80,6 @@ var KTLayoutBuilder = function() {
 			}
 			exporter.doneLoad();
 		},
-		runGenerate: function() {
-			$.ajax('../tools/builder/cron-generate.php', {
-				method: 'POST',
-				data: {
-					theme: 'metronic',
-				},
-			}).done(function(r) {});
-		}
 	};
 
 	// Private functions
@@ -149,12 +88,19 @@ var KTLayoutBuilder = function() {
 			e.preventDefault();
 			var _self = $(this);
 			$(_self).
-			addClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').
-			closest('.kt-form__actions').
-			find('.btn').
-			attr('disabled', true);
+					addClass('spinner spinner-right spinner-white').
+					closest('.card-footer').
+					find('.btn').
+					attr('disabled', true);
 
-			$.ajax('index.php?demo=' + $(_self).data('demo'), {
+			// keep remember tab id
+			$('.nav[data-remember-tab]').each(function() {
+				var tab = $(this).data('remember-tab');
+				var tabId = $(this).find('.nav-link.active[data-toggle="tab"]').attr('href');
+				$('#' + tab).val(tabId);
+			});
+
+			$.ajax(formAction + '?demo=' + $(_self).data('demo'), {
 				method: 'POST',
 				data: $('[name]').serialize(),
 			}).done(function(r) {
@@ -172,12 +118,12 @@ var KTLayoutBuilder = function() {
 			e.preventDefault();
 			var _self = $(this);
 			$(_self).
-			addClass('kt-spinner kt-spinner--right kt-spinner--sm kt-spinner--light').
-			closest('.kt-form__actions').
-			find('.btn').
-			attr('disabled', true);
+					addClass('spinner spinner-right spinner-primary').
+					closest('.card-footer').
+					find('.btn').
+					attr('disabled', true);
 
-			$.ajax('index.php?demo=' + $(_self).data('demo'), {
+			$.ajax(formAction + '?demo=' + $(_self).data('demo'), {
 				method: 'POST',
 				data: {
 					builder_reset: 1,
@@ -186,38 +132,6 @@ var KTLayoutBuilder = function() {
 			}).done(function(r) {}).always(function() {
 				location.reload();
 			});
-		});
-	};
-
-	var keepActiveTab = function() {
-		$('[href^="#kt_builder_"]').click(function(e) {
-			var which = $(this).attr('href');
-			var btn = $('[name="builder_submit"]');
-			var tab = $('[name="builder[tab]"]');
-			if ($(tab).length === 0) {
-				$('<input/>').
-				attr('type', 'hidden').
-				attr('name', 'builder[tab]').
-				val(which).
-				insertBefore(btn);
-			} else {
-				$(tab).val(which);
-			}
-		}).each(function() {
-			if ($(this).hasClass('active')) {
-				var which = $(this).attr('href');
-				var btn = $('[name="builder_submit"]');
-				var tab = $('[name="builder[tab]"]');
-				if ($(tab).length === 0) {
-					$('<input/>').
-					attr('type', 'hidden').
-					attr('name', 'builder[tab]').
-					val(which).
-					insertBefore(btn);
-				} else {
-					$(tab).val(which);
-				}
-			}
 		});
 	};
 
@@ -231,9 +145,9 @@ var KTLayoutBuilder = function() {
 			}).fail(function() {
 				grecaptcha.reset();
 				$('#alert-message').
-				removeClass('alert-success kt-hide').
-				addClass('alert-danger').
-				html('Invalid reCaptcha validation');
+						removeClass('alert-success d-hide').
+						addClass('alert-danger').
+						html('Invalid reCaptcha validation');
 			});
 		},
 		init: function() {
@@ -244,7 +158,7 @@ var KTLayoutBuilder = function() {
 				exportReadyTrigger = $(this);
 
 				$('#kt-modal-purchase').modal('show');
-				$('#alert-message').addClass('kt-hide');
+				$('#alert-message').addClass('d-hide');
 				grecaptcha.reset();
 			});
 
@@ -252,9 +166,9 @@ var KTLayoutBuilder = function() {
 				e.preventDefault();
 				if (!$('#g-recaptcha-response').val()) {
 					$('#alert-message').
-					removeClass('alert-success kt-hide').
-					addClass('alert-danger').
-					html('Invalid reCaptcha validation');
+							removeClass('alert-success d-hide').
+							addClass('alert-danger').
+							html('Invalid reCaptcha validation');
 					return;
 				}
 
@@ -270,16 +184,13 @@ var KTLayoutBuilder = function() {
 							case 'builder_export_html':
 								exporter.exportHtml(demo);
 								break;
-							case 'builder_export_html_static':
-								exporter.exportHtmlStatic(demo);
-								break;
 						}
 					} else {
 						grecaptcha.reset();
 						$('#alert-message').
-						removeClass('alert-success kt-hide').
-						addClass('alert-danger').
-						html('Invalid reCaptcha validation');
+								removeClass('alert-success d-hide').
+								addClass('alert-danger').
+								html('Invalid reCaptcha validation');
 					}
 				});
 			});
@@ -289,7 +200,6 @@ var KTLayoutBuilder = function() {
 	// basic demo
 	var init = function() {
 		exporter.init();
-		keepActiveTab();
 		preview();
 		reset();
 	};
