@@ -16,8 +16,9 @@ $outrageous-orange: #ff785aff; */
 
     .jumbotron {
         top: -14.7vh;
-        background-position: -60vh 9vh;
+        background-position: -59vh 9vh;
         background-size: 140vh;
+        overflow: hidden;
     }
 
     .navbar-nav .nav-item,
@@ -28,7 +29,7 @@ $outrageous-orange: #ff785aff; */
     .jumbotron .container-fluid {
         position: absolute;
         width: 100%;
-        top: 15vh;
+        top: 17vh;
         left: 33vh;
     }
 
@@ -40,10 +41,51 @@ $outrageous-orange: #ff785aff; */
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
     /*tampilan tablet*/
+    /* .jumbotron .container-fluid .banner {
+        background-color: #7432FF !important;
+        height: auto !important;
+        background-position: center center;
+        background-size: cover;
+        overflow: hidden;
+    }
+    
+
+    .navbar .lp img{
+        width: 15vh !important;
+    } */
+
+    .navbar {
+        background-color: white !important;
+        z-index: 100;
+        position: absolute;
+        width: 100%;
+    }
+
+    .jumbotron {
+        top: 0vh;
+        background-position: -19vh 46vh;
+        background-size: 80vh;
+    }
+
+    .navbar-nav .nav-item,
+    .navbar-nav .active {
+        margin: 2vh 0vh !important;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        padding: 2vh !important;
+    }
+
+    .jumbotron .container-fluid {
+        position: absolute;
+        width: 100%;
+        top: 10vh;
+        left: 0vh;
+    }
+
     .jumbotron .container-fluid .banner {
         height: auto !important;
-        background-position: -10vh 46vh;
-        background-size: 80vh;
     }
 
     .navbar .lp img{
@@ -63,7 +105,7 @@ $outrageous-orange: #ff785aff; */
 
     .jumbotron {
         top: 0vh;
-        background-position: -10vh 46vh;
+        background-position: -35vh 46vh;
         background-size: 80vh;
     }
 
@@ -97,7 +139,7 @@ $outrageous-orange: #ff785aff; */
 
 /* strucktur html */
 body {
-    background-color: #FFFF !important;
+    background-color: #FAFAFA !important;
 }
 
 /* strucktur html */
@@ -206,9 +248,9 @@ body {
 
 .jumbotron {
     position: relative;
-    /* background-image: url(../../assets/media/error/bg4.jpg) !important; */
-    background-image: url(../media/error/agency-1.jpg) !important;
-    background-color: #FFFF !important;
+    /* background-image: url(../media/error/agency-2.jpg) !important; */
+    background-image: url(../media/svg/illustrations/data-points.svg) !important;
+    background-color: #FAFAFA !important;
     background-repeat: no-repeat;
     color: #FFFF !important;
     font-family: Filipi;
@@ -218,8 +260,7 @@ body {
 .jumbotron .container-fluid .banner {
     background-color: #FFFF;
     color: #FFFF !important;
-    box-shadow: 0rem 0.8rem 1px #555;
-    /* height: 60vh; */
+    box-shadow: 0rem 0.6rem 1px #333;
     height: auto;
     border-radius: 5vh;
     border: 3px solid #333 !important;
@@ -238,7 +279,9 @@ body {
 .navbar-nav .nav-item {
     font-family: Filipi;
     text-align: center;
-    background-color: #ff785a;
+    /* background-color: #ff785a; */
+    /* color: #F7F3E3 !important; */
+    background-color: #6C63FF; 
     color: #F7F3E3 !important;
     margin: 2vh 3vh;
     padding: 1vh 0vh;
@@ -252,7 +295,7 @@ body {
     font-family: Filipi;
     text-align: center;
     background-color: #f7f3e3;
-    color: #ff785a !important;
+    color: #6C63FF !important;
     margin: 2h 3vh;
     padding: 1vh 0vh;
     /* width: 15vh; */
