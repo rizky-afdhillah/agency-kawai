@@ -6,7 +6,7 @@
         z-index: 100;
     }
     .jumbotron{
-        top: -7.7vh;
+        top: -10.7vh;
     }
 }
 
@@ -123,9 +123,44 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-attachment: fixed; */
     color: #333 !important;
     font-family: Filipi;
+    height: 40vh;
+}
+
+.navbar{
+    padding: 4vh 0vh 0vh;
+}
+.navbar-nav .nav-item{
+    font-family: Filipi;
+    text-align: center;
+    background-color: #1ABF9B;
+    color: #FFFF !important;
+    margin: 0vh 3vh;
+    padding: 1vh 0vh;
+    width: 15vh;
+    border-radius: 20vh;
+    box-shadow: 0rem 0.4rem 1px #555;
+    border: 3px solid #333 !important;
+}
+.navbar-nav .active{
+    font-family: Filipi;
+    text-align: center;
+    background-color: #FFFF;
+    color: #1ABF9B !important;
+    margin: 0vh 3vh;
+    padding: 1vh 0vh;
+    width: 15vh;
+    border-radius: 20vh;
+    box-shadow: 0rem 0.4rem 1px #555;
+    border: 3px solid #333 !important;
+}
+.navbar-nav a:hover{
+    position: relative;
+    border: 3px solid #333;
+    box-shadow: 0rem 0.2rem 1px #555;
+    top: 0.2rem;
+    transition: none !important;
 }
 /* Index Landing Page */
 
