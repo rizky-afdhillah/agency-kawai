@@ -28,7 +28,8 @@ $outrageous-orange: #ff785aff; */
     .jumbotron .container-fluid {
         position: absolute;
         width: 100%;
-        top: 20vh;
+        top: 15vh;
+        left: 33vh;
     }
 
     .navbar .lp img{
