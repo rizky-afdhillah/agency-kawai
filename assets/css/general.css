@@ -1,10 +1,43 @@
+/* Responsive */
+@media screen and (min-width:992px) {
+    /* Dekstop */
+    .navbar {
+        background-color: transparent !important;
+        z-index: 100;
+    }
+    .jumbotron{
+        top: -7.7vh;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /*tampilan tablet*/
+    
+
+}
+
+@media screen and (max-width:768px) {
+    /* Mobile */
+    .navbar {
+        background-color: white !important;
+        z-index: 100;
+        position: absolute;
+        width: 100%;
+    }
+    .jumbotron{
+        top: 0vh;
+    }
+}
+
+/* END RESPONSIF */
+
 /* ALL BUTTON */
 .btn{
     width: 100%;
     border-radius: 10px;
     border: 3px solid #333;
     box-shadow: 0rem 0.4rem 1px #555;
-    font-family: monospace;
+    font-family: Filipi;
 }
 
 .btn:hover{
@@ -84,10 +117,15 @@
 /* END ALL BUTTON */
 
 /* Index Landing Page */
-.navbar {
-    /* opacity: 0% !important; */
-    background-color: transparent !important;
-    z-index: 100;
+.jumbotron {
+    position: relative;
+    background-image: url(../../assets/media/error/bg3.jpg) !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-attachment: fixed; */
+    color: #333 !important;
+    font-family: Filipi;
 }
 /* Index Landing Page */
 
