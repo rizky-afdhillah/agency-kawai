@@ -1,22 +1,57 @@
+/* Color */
+/* $ebony: #545c52ff;
+$old-lace: #f7f3e3ff;
+$denim-blue: #3943b7ff;
+$carolina-blue: #009ddcff;
+$outrageous-orange: #ff785aff; */
+/* End Color */
 /* Responsive */
 @media screen and (min-width:992px) {
+
     /* Dekstop */
     .navbar {
         background-color: transparent !important;
         z-index: 100;
     }
-    .jumbotron{
-        top: -10.7vh;
+
+    .jumbotron {
+        top: -14.7vh;
+        background-position: -60vh 9vh;
+        background-size: 140vh;
+    }
+
+    .navbar-nav .nav-item,
+    .navbar-nav .active {
+        width: 15vh;
+    }
+
+    .jumbotron .container-fluid {
+        position: absolute;
+        width: 100%;
+        top: 20vh;
+    }
+
+    .navbar .lp img{
+        width: 24%;
     }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-    /*tampilan tablet*/
-    
 
+    /*tampilan tablet*/
+    .jumbotron .container-fluid .banner {
+        height: auto !important;
+        background-position: -10vh 46vh;
+        background-size: 80vh;
+    }
+
+    .navbar .lp img{
+        width: 15vh !important;
+    }
 }
 
 @media screen and (max-width:768px) {
+
     /* Mobile */
     .navbar {
         background-color: white !important;
@@ -24,15 +59,49 @@
         position: absolute;
         width: 100%;
     }
-    .jumbotron{
+
+    .jumbotron {
         top: 0vh;
+        background-position: -10vh 46vh;
+        background-size: 80vh;
+    }
+
+    .navbar-nav .nav-item,
+    .navbar-nav .active {
+        margin: 2vh 0vh !important;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        padding: 2vh !important;
+    }
+
+    .jumbotron .container-fluid {
+        position: absolute;
+        width: 100%;
+        top: 20vh;
+        left: 0vh;
+    }
+
+    .jumbotron .container-fluid .banner {
+        height: auto !important;
+    }
+
+    .navbar .lp img{
+        width: 25vh !important;
     }
 }
 
 /* END RESPONSIF */
 
+/* strucktur html */
+body {
+    background-color: #FFFF !important;
+}
+
+/* strucktur html */
 /* ALL BUTTON */
-.btn{
+.btn {
     width: 100%;
     border-radius: 10px;
     border: 3px solid #333;
@@ -40,7 +109,7 @@
     font-family: Filipi;
 }
 
-.btn:hover{
+.btn:hover {
     position: relative;
     border: 3px solid #333;
     box-shadow: 0rem 0.2rem 1px #555;
@@ -48,129 +117,168 @@
     transition: none !important;
 }
 
-.btn-orange{
+.btn-orange {
     color: #FFFF;
     background-color: #FF7A00;
 }
-.btn-orange:hover{
+
+.btn-orange:hover {
     color: #FFFF;
 }
 
-.btn-violet{
+.btn-violet {
     color: #FFFF;
     background-color: #7432FF;
 }
-.btn-violet:hover{
+
+.btn-violet:hover {
     color: #FFFF;
 }
 
-.btn-cream{
+.btn-cream {
     background-color: lightgoldenrodyellow;
 }
 
-.btn-white{
+.btn-white {
     background-color: #FFFF !important;
     color: #FFFF;
 }
 
-.btn-red{
+.btn-red {
     background-color: #F64E60;
     color: #FFFF;
 }
-.btn-red:hover{
+
+.btn-red:hover {
     color: #FFFF;
 }
 
 /* btn toska */
-.btn-green{
+.btn-green {
     color: #FFFF;
     background-color: #1ABF9B;
 }
-.btn-green:hover{
+
+.btn-green:hover {
     color: #FFFF;
 }
-.btn-light-green{
+
+.btn-light-green {
     color: #FFFF;
     background-color: #A6EADA;
     color: #1ABF9B;
 }
-.btn-light-green:hover{
+
+.btn-light-green:hover {
     color: #FFFF;
 }
+
+.btn-light-blue {
+    background-color: #009ddcff;
+    color: #F7F3E3;
+}
+
 /* btn toska */
 
 /* Ukuran */
-.penuh{
+.penuh {
     width: 50%;
 }
-.setengah{
+
+.setengah {
     width: 50%;
 }
-.seperempat{
+
+.seperempat {
     width: 25%;
 }
-.tigaperemat{
+
+.tigaperemat {
     width: 75%;
 }
+
 /* Ukuran */
 
 /* END ALL BUTTON */
 
 /* Index Landing Page */
+
 .jumbotron {
     position: relative;
-    background-image: url(../../assets/media/error/bg3.jpg) !important;
-    background-position: center center;
+    /* background-image: url(../../assets/media/error/bg4.jpg) !important; */
+    background-image: url(../media/error/agency-1.jpg) !important;
+    background-color: #FFFF !important;
     background-repeat: no-repeat;
-    background-size: cover;
-    color: #333 !important;
+    color: #FFFF !important;
     font-family: Filipi;
-    height: 40vh;
+    height: 100vh;
 }
 
-.navbar{
-    padding: 4vh 0vh 0vh;
-}
-.navbar-nav .nav-item{
-    font-family: Filipi;
-    text-align: center;
-    background-color: #1ABF9B;
-    color: #FFFF !important;
-    margin: 0vh 3vh;
-    padding: 1vh 0vh;
-    width: 15vh;
-    border-radius: 20vh;
-    box-shadow: 0rem 0.4rem 1px #555;
-    border: 3px solid #333 !important;
-}
-.navbar-nav .active{
-    font-family: Filipi;
-    text-align: center;
+.jumbotron .container-fluid .banner {
     background-color: #FFFF;
-    color: #1ABF9B !important;
-    margin: 0vh 3vh;
+    color: #FFFF !important;
+    box-shadow: 0rem 0.8rem 1px #555;
+    /* height: 60vh; */
+    height: auto;
+    border-radius: 5vh;
+    border: 3px solid #333 !important;
+    padding: 0vh 0vh 0vh;
+    overflow: hidden;
+}
+
+.jumbotron .container-fluid .banner .carousel-item .carousel-caption {
+    color: #333 !important;
+}
+
+.navbar-nav {
+    padding: 3vh 0vh 0vh;
+}
+
+.navbar-nav .nav-item {
+    font-family: Filipi;
+    text-align: center;
+    background-color: #ff785a;
+    color: #F7F3E3 !important;
+    margin: 2vh 3vh;
     padding: 1vh 0vh;
-    width: 15vh;
+    /* width: 15vh; */
     border-radius: 20vh;
     box-shadow: 0rem 0.4rem 1px #555;
     border: 3px solid #333 !important;
 }
-.navbar-nav a:hover{
+
+.navbar-nav .active {
+    font-family: Filipi;
+    text-align: center;
+    background-color: #f7f3e3;
+    color: #ff785a !important;
+    margin: 2h 3vh;
+    padding: 1vh 0vh;
+    /* width: 15vh; */
+    border-radius: 20vh;
+    box-shadow: 0rem 0.4rem 1px #555;
+    border: 3px solid #333 !important;
+}
+
+.navbar-nav a:hover {
     position: relative;
     border: 3px solid #333;
     box-shadow: 0rem 0.2rem 1px #555;
     top: 0.2rem;
     transition: none !important;
 }
+
 /* Index Landing Page */
 
 /* Form Input */
-.form-control{
+.form-control {
     border: 3px solid #333 !important;
     box-shadow: 0rem 0.4rem 1px #555;
 }
-.form-control:focus{
+
+.form-control:focus {
     border: 3px solid #333 !important;
     box-shadow: 0rem 0.4rem 1px #555;
 }
+
 /* Form Input */
