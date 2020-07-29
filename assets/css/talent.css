@@ -2,6 +2,9 @@
     background-color: #31D8B1 !important;
     color: #A6EADA !important;
 }
+.active{
+    background-color: #31D8B1 !important;
+}
 
 .aside .btn.btn-icon .svg-icon svg g [fill]{
     fill: #1ABF9B;
@@ -18,3 +21,9 @@
 .svg-icon{
     color: #A6EADA !important;
 } */
+
+.symbol-label{
+    background-color: turquoise !important;
+    border-radius: 20vh !important;
+    overflow: hidden;
+}

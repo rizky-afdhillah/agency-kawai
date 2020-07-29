@@ -269,11 +269,7 @@ body {
 }
 
 .jumbotron .container-fluid .banner .carousel-item .carousel-caption {
-    font-family: arca-heavy;
     color: #333 !important;
-    position: absolute;
-    top: 20vh;
-    left: -40vh;
 }
 
 .navbar-nav {
@@ -287,7 +283,7 @@ body {
     color: #000000 !important;
     margin: 2vh 3vh;
     padding: 1vh 0vh;
-    border-radius: 1vh;
+    border-radius: 20vh;
     box-shadow: 0rem 0.4rem 1px #555;
     border: 3px solid #333 !important;
 }
@@ -300,7 +296,7 @@ body {
     margin: 2h 3vh;
     padding: 1vh 0vh;
     /* width: 15vh; */
-    border-radius: 1vh;
+    border-radius: 20vh;
     box-shadow: 0rem 0.2rem 1px #555;
     border: 3px solid #333 !important;
 }

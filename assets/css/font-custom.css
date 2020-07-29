@@ -17,3 +17,13 @@
     font-family: Man;
     src: url(../plugins/global/fonts/custom/Manchester.ttf);
 }
+
+/* Font Arca-majoro */
+@font-face {
+    font-family: arca-bold;
+    src: url(../plugins/global/fonts/custom/arca-majoro/ArcaMajora3-Bold.otf);
+}
+@font-face {
+    font-family: arca-heavy;
+    src: url(../plugins/global/fonts/custom/arca-majoro/ArcaMajora3-Heavy.otf);
+}
