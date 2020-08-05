@@ -7,7 +7,7 @@ var KTLeaflet = function () {
 	var demo1 = function () {
 		// define leaflet
 		var leaflet = L.map('kt_leaflet_1', {
-			center: [-37.8179793, 144.9671293],
+			center: [-3.2989263, 114.5904614],
 			zoom: 11
 		});
 
@@ -26,8 +26,8 @@ var KTLeaflet = function () {
 		});
 
 		// bind marker with popup
-		var marker = L.marker([-37.8179793, 144.9671293], { icon: leafletIcon }).addTo(leaflet);
-		marker.bindPopup("<b>Flinder's Station</b><br/>Melbourne, Victoria").openPopup();
+		var marker = L.marker([-3.2989263, 114.5904614], { icon: leafletIcon }).addTo(leaflet);
+		marker.bindPopup("<b>Gedung Sultan Suriansyah</b><br/>Banjarmasin, Kalimantan Selatan").openPopup();
 	}
 
 	var demo2 = function () {

@@ -10,14 +10,14 @@ $outrageous-orange: #ff785aff; */
 
     /* Dekstop */
     .navbar {
-        background-color: transparent !important;
+        background-color: #FFFF !important;
         z-index: 100;
     }
 
     .jumbotron {
         top: -14.7vh;
-        background-position: -59vh 9vh;
-        background-size: 140vh;
+        background-position: -59vh 16vh;
+        background-size: 130vh;
         overflow: hidden;
     }
 
@@ -145,7 +145,6 @@ body {
 /* strucktur html */
 /* ALL BUTTON */
 .btn {
-    width: 100%;
     border-radius: 10px;
     border: 3px solid #333;
     box-shadow: 0rem 0.4rem 1px #555;
@@ -158,6 +157,18 @@ body {
     box-shadow: 0rem 0.2rem 1px #555;
     top: 0.2rem;
     transition: none !important;
+}
+
+.btn-x{
+    width: 100%;
+}
+
+.btn-l{
+    width: 50%;
+}
+
+.btn-s{
+    width: 25%;
 }
 
 .btn-orange {
@@ -179,7 +190,7 @@ body {
 }
 
 .btn-cream {
-    background-color: lightgoldenrodyellow;
+    background-color: #FFDE6A;
 }
 
 .btn-white {
@@ -188,7 +199,7 @@ body {
 }
 
 .btn-red {
-    background-color: #F64E60;
+    background-color: #E55353;
     color: #FFFF;
 }
 
@@ -276,15 +287,17 @@ body {
     left: -40vh;
 }
 
+
 .navbar-nav {
     padding: 3vh 0vh 0vh;
 }
 
 .navbar-nav .nav-item {
     font-family: arca-heavy;
+    font-size: 20px;
     text-align: center;
-    background-color: #f8f32b; 
-    color: #000000 !important;
+    background-color: #f95738; 
+    color: #FFFF !important;
     margin: 2vh 3vh;
     padding: 1vh 0vh;
     border-radius: 1vh;
